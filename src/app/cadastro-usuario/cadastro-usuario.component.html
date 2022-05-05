@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card card-container">
+        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin">
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="text" id="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="usuario.email">
+            <input type="password" id="password" class="form-control" placeholder="Senha" name="password" [(ngModel)]="usuario.password">
+            <input type="text" id="name" class="form-control" placeholder="Nome" name="name" [(ngModel)]="usuario.name">
+            <input type="text" id="endereco" class="form-control" placeholder="Endereço" name="endereco" [(ngModel)]="usuario.endereco">
+            <input type="text" id="numero" class="form-control" placeholder="Número" name="numero" [(ngModel)]="usuario.numero">
+            <input type="text" id="cidade" class="form-control" placeholder="Cidade" name="cidade" [(ngModel)]="usuario.cidade">
+            <input type="text" id="estado" class="form-control" placeholder="Estado" name="estado" [(ngModel)]="usuario.estado">
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="button" (click)="cadastrar()" >Cadastrar</button>
+        </form><!-- /form -->
+        <a routerLink='' class="forgot-password">
+         Voltar para Login!
+        </a>
+    </div><!-- /card-container -->
+</div><!-- /container -->
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+
