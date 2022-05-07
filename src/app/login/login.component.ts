@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
   public loading = false;
   credentials: any = {}
-  constructor(private loginservice: LoginService, private toastr: ToastrService) {
+  constructor(private loginservice: LoginService, private toastr: ToastrService, private router: Router) {
 
   }
 
@@ -29,6 +30,8 @@ export class LoginComponent implements OnInit {
       if (result.status) {
         return this.toastr.warning('Email ou Senha invalido!', 'ATENÇÂO!');
       }
+      sessionStorage.setItem('token',result.token)
+      this.router.navigate(['/dashboard'])
       return this.toastr.success('Login efetuado com sucesso!', 'ATENÇÂO!');
     })
   }
