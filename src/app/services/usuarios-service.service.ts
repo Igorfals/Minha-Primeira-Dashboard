@@ -13,7 +13,7 @@ export class UsuariosServiceService {
     }),
   };
   constructor(private http: HttpClient) {
-    
+
   }
   cadastrar(credentials: any) {
     return new Promise((resolve) => {
@@ -25,5 +25,14 @@ export class UsuariosServiceService {
         });
     });
   }
-
+  getUsuarios() {
+    return new Promise((resolve) => {
+      this.http.get(`${environment.baseurl}/users`, this.httpOptions)
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          resolve(err);
+        });
+    });
+  }
 }

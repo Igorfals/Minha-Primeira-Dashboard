@@ -1,1 +1,20 @@
-<p>usuarios works!</p>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usuario of dataSource">
+                <th scope="row">{{usuario.id_user}}</th>
+                <td>{{usuario.name}}</td>
+                <td>{{usuario.email}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

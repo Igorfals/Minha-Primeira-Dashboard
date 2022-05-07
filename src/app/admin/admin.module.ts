@@ -16,7 +16,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LayoutComponent } from './layout/layout.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ProdutosComponent } from './produtos/produtos.component';
-
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [MenuComponent, DashboardComponent, LayoutComponent, UsuariosComponent, ProdutosComponent],
@@ -31,7 +31,8 @@ import { ProdutosComponent } from './produtos/produtos.component';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule
   ]
 })
 export class AdminModule { }
