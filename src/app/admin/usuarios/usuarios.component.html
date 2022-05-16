@@ -1,20 +1,26 @@
 <div class="row">
-    <div class="col-12">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let usuario of dataSource">
-                <th scope="row">{{usuario.id_user}}</th>
-                <td>{{usuario.name}}</td>
-                <td>{{usuario.email}}</td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
+  <div class="col-12">
+    <button mat-raised-button color="primary" (click)="open()">Novo</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of dataSource">
+          <th scope="row">{{usuario.id_user}}</th>
+          <td>{{usuario.name}}</td>
+          <td>{{usuario.email}}</td>
+          <td>
+            <mat-icon (click)="alterar(usuario)">edit</mat-icon>
+            <mat-icon (click)="apagar(usuario)">remove_circle</mat-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

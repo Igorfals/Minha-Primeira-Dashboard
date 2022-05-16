@@ -17,9 +17,12 @@ import { LayoutComponent } from './layout/layout.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import {MatTableModule} from '@angular/material/table';
+import { CadastroUsuarioComponent } from './modals/cadastro-usuario/cadastro-usuario.component';
+import { FormsModule } from '@angular/forms';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
-  declarations: [MenuComponent, DashboardComponent, LayoutComponent, UsuariosComponent, ProdutosComponent],
+  declarations: [MenuComponent, DashboardComponent, LayoutComponent, UsuariosComponent, ProdutosComponent, CadastroUsuarioComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -32,7 +35,10 @@ import {MatTableModule} from '@angular/material/table';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule,
+    FormsModule,
+    NgxLoadingModule.forRoot({}),
   ]
 })
 export class AdminModule { }

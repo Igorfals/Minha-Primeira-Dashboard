@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       if (result.status) {
         return this.toastr.warning('Email ou Senha invalido!', 'ATENÇÂO!');
       }
-      sessionStorage.setItem('token',result.token)
+      sessionStorage.setItem('token', JSON.stringify(result.token))
       this.router.navigate(['/dashboard'])
       return this.toastr.success('Login efetuado com sucesso!', 'ATENÇÂO!');
     })
